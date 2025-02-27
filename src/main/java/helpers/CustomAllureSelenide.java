@@ -1,4 +1,4 @@
-/*package helpers;
+package helpers;
 
 import com.codeborne.selenide.logevents.LogEvent;
 import com.codeborne.selenide.logevents.SelenideLog;
@@ -30,10 +30,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.logging.Level;
 
-public class CustomAllureSelenide {
-
-
-    public class CustomAllureSelenide extends AllureSelenide {
+public class CustomAllureSelenide extends AllureSelenide {
 
         private static final Logger LOGGER = LoggerFactory.getLogger(AllureSelenide.class);
         private boolean saveScreenshots;
@@ -128,7 +125,6 @@ public class CustomAllureSelenide {
         private boolean stepsShouldBeLogged(LogEvent event) {
             return this.includeSelenideLocatorsSteps || !(event instanceof SelenideLog);
         }
-    }
-
 }
-*/
+
+
