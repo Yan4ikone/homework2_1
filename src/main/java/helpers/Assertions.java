@@ -2,6 +2,10 @@ package helpers;
 
 import io.qameta.allure.Step;
 
+/**
+ * Класс для кастомных проверок с интеграцией в Allure-отчёт.
+ * @author Yan
+ */
 public class Assertions {
 
     @Step("Проверяем, что нет ошибки: '{message}'")
