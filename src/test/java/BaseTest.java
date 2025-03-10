@@ -20,18 +20,18 @@ public class BaseTest {
     /**
      * Настройка WebDriver перед каждым тестом.
      */
-    @BeforeEach
+  /*  @BeforeEach
     public void before() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-extensions");
-        Configuration.timeout = 6000;
-        Configuration.browser = "chrome";
+        //Configuration.timeout = 6000;
+        //Configuration.browser = "chrome";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "none");
-        Configuration.browserCapabilities = capabilities;
-    }
+        //Configuration.browserCapabilities = capabilities;*/
 }
+
 
 
 

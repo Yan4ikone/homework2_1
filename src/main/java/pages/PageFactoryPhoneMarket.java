@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import helpers.Assertions;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
@@ -15,6 +16,7 @@ import static com.codeborne.selenide.Selenide.$x;
  */
 public class PageFactoryPhoneMarket {
 
+    @Step ("Проверка соответствия выборки товаров с {product}")
     public void choosePhone(String productApple, String product) {
         $x("//span[contains(text(), 'Показать всё')]").click(); // нажатие вкладки показать всё
         SelenideElement searchFieldEnter = $x("//*[@placeholder='Найти']");
@@ -22,17 +24,13 @@ public class PageFactoryPhoneMarket {
         SelenideElement phoneApple = $x("//span[text()='Apple']");
         phoneApple.click();// нажатие кнопки Apple
         SelenideElement buttonNext = $x("//span[text()='Вперёд']");
-        ElementsCollection titles = $$x("//span[@data-auto='snippet-title' and not(ancestor::*[@data-auto='searchIncut'])]");
-        if (buttonNext.is(exist)) {
-            do {
+        do {
                 buttonNext.scrollIntoView(false);
-            } while (buttonNext.is(visible));
-        }
+        } while ((buttonNext.is(exist)));
+        ElementsCollection titles = $$x("//span[@data-auto='snippet-title' and not(ancestor::*[@data-auto='searchIncut'])]");
         for (SelenideElement item : titles) {
-            System.out.println(item.text());
-            System.out.println(product);
             Assertions.assertTrue(item.text().toLowerCase().contains(product),
-                    "Элементы не соответствуют заданным параметрам");
+                    "Элементы по заданным параметрам");
         }
     }
 }

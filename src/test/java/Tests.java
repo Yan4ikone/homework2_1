@@ -7,7 +7,7 @@ import pages.PageFactoryMainMarket;
 import static com.codeborne.selenide.Selenide.open;
 import static helpers.Properties.configProperties;
 
-public class Tests {
+public class Tests extends BaseTest {
 
     /**
      * Класс для выполнения тестов поиска на маркетплейсе с использованием PageFactory.

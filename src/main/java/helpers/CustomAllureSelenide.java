@@ -25,7 +25,7 @@ import java.util.logging.Level;
 
 public class CustomAllureSelenide extends AllureSelenide {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AllureSelenide.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CustomAllureSelenide.class);
     private boolean saveScreenshots;
     private boolean savePageHtml;
     private boolean includeSelenideLocatorsSteps;
